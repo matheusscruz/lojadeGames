@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Loja de Games</title>
+    </head>
+    <style>
+        body {
+	        background-image: url(_img/sonic-mania-plus_capa-770x500-Banner.jpg);
+	        background-repeat: no-repeat;
+	        background-size: cover;
+	        background-attachment: fixed;
+        }
+        
+        header {
+	        border-bottom: 1px ridge #FFF; 
+            margin-bottom: 15px;
+        }
+
+        div#container {
+	        width: 100%;
+	        height: 100%;
+	        display: inline-flex;
+	        flex-direction: row;
+	        justify-content: center;
+	        align-items: center;
+        }
+
+        div#wrapper {
+	        border: 5px ridge #B5101A;
+	        padding: 5px;
+	        text-align: center;
+	        background-color: goldenrod;
+        }
+
+        div.box {
+	        width: 150px;
+            display: inline-block;
+            align-items: center;
+            margin: 10px;
+        }
+
+        img {
+            border: 4px solid #B5101A;
+	        border-radius: 10px;
+            filter: brightness(50%);
+        }
+
+        .box:hover > a > img{
+            filter:brightness(100%);
+            transition: 1s;
+        }
+
+        input#selecao {
+            height: 25px;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+        }
+
+        h1 {
+	        font-family: serif;
+	        font-size: 40pt;
+	        font-style: italic;
+	        text-shadow: 3px 3px #000;
+        } 
+
+        h3, h4 {
+	        font-family: Lucida Grande;
+	        font-size: 20pt;
+	        text-shadow: 2px 2px #000;
+        }
+
+        div.Opcao{
+            display: block;
+            background-color: #4054B2;
+            border: 3px outset #4054B2;
+            min-width: 80px;
+            height: 55px;
+            justify-content: center;
+            flex-direction: row;
+        }
+
+        p {
+            font-size: 12pt;
+            color: white;
+        }
+    </style>
+
+	<body>
+	<div id="container">
+		<div id="wrapper">
+			<header>
+				<h1 style="color: white">Game Stores</h1>
+			</header>
+            <!-- NÃO SE ESQUECER DE COLOCAR A TAG LABEL E OUTROS AJUSTES -->
+			<section>
+                <form method="GET" action="http://localhost:8080/">
+                        <h3 style="color: white">Escolha um console:</h3>
+                        
+                        <div class="box">
+                            <a href="#"><img width="50%" src="_img/PS4-Pro.jpg" title="PlayStation 4"/>
+                                <div class="Opcao">
+                                    <label for="Ps4">
+                                        <p><input id="Ps4" type="radio" name="opcao" value="1" onclick="GetOpcao(1)">PlayStation 4</p>
+                                    </label>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="box">
+                            <a href="#"><img width="50%" src="_img/xboxone-x-branco.jpg" title="XBox One"/>
+                                <div class="Opcao">
+                                    <label for="Xbox">
+                                        <p><input id="Xbox" type="radio" name="opcao" value="2" onclick="GetOpcao(2)">Xbox One</p>
+                                    </label>
+                                </div>
+                            </a>
+                        </div>
+                            
+                        <div class="box">
+                            <a href="#"><img width="50%" src="_img/nintendoSwitch-Neon.jpg" title="Nintendo Switch"/>
+                                <div class="Opcao">
+                                    <label for="NinS">
+                                        <p><input id="NinS" type="radio" name="opcao" value="3" onclick="GetOpcao(3)">Nintendo Switch</p>
+                                    </label>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="box">
+                            <a href="#"><img width="50%" src="_img/new-nintendo3ds.jpg" title="Nintendo 3DS"/>
+                                <div class="Opcao">
+                                    <label for="Nin3ds">
+                                        <p><input id="Nin3ds" type="radio" name="opcao" value="4" onclick="GetOpcao(4)">Nintendo 3DS</p>
+                                    </label>
+                                </div>
+                            </a>
+                        </div>
+
+                        <h4 style="color: white" class="Titulo">Ou, se preferir:</h4>
+        
+                        <div class="box">
+                            <a href="#"><img width="95%" src="_img/laptop-gamer.jpg" title="Notebook Gamer"/>
+                                <div class="Opcao">
+                                    <label for="NB">
+                                        <p><input id="NB" type="radio" name="opcao" value="5" onclick="GetOpcao(5)">Notebook Gamer</p>
+                                    </label>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="btn">
+                        <input id="selecao" type="text" name="valor" value="Sua Escolha" readonly>
+                        <button class="btn" type="submit">Confirmar</button>
+                        </div>
+                </form>
+			</section>
+		</div>
+    </div>
+    <script>
+    function GetOpcao(opcao) {
+        let texto = document.getElementById("selecao");
+        switch(opcao) {
+            case 1: texto.value = "PlayStation 4"; break;
+            case 2: texto.value = "Xbox One"; break;
+            case 3: texto.value = "Nintendo Switch"; break;
+            case 4: texto.value = "Nintendo 3DS"; break;
+            case 5: texto.value = "Notebook Gamer"; break;
+        }
+    }
+    </script>
+	</body>
+</html>

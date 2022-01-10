@@ -1,0 +1,14 @@
+{
+  "name": "api-videogames",
+  "version": "1.0.0",
+  "description": "Uma API para servir os dados ao site para exibir os produtos aos clientes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "WernerRomling",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.17.1"
+  }
+}
